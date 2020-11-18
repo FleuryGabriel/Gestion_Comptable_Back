@@ -19,18 +19,17 @@ import com.mcompteComptable.service.CompteComptableService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/compte")
 public class CompteComptableController {
 
 	@Autowired
 	CompteComptableService compteComptableService;
 	
-	@PostMapping(value="/save")
+	@PostMapping(value="/compteComptables")
 	public CompteComptable saveOrUpdate (@RequestBody CompteComptable compteComptable)
 	{
 		return compteComptableService.saveOrUpdate(compteComptable);
 	}
-	@GetMapping(value="/findOne/{id}")
+	@GetMapping(value="/compteComptables/{id}")
 	public CompteComptable findOne (@PathVariable("id") Long id)
 	{
 		return compteComptableService.findOne(id);
@@ -42,12 +41,12 @@ public class CompteComptableController {
 	return compteComptableService.findAll();
 	}
 
-	@DeleteMapping(value="/delete/{id}")
+	@DeleteMapping(value="/compteComptables/{id}")
 	public void deleteCompteComptable(@PathVariable("id")Long id)
 	{
 		compteComptableService.delete(id);
 	}
-	@PutMapping(value="/deleted/{id}")
+	@PutMapping(value="/compteComptables/{id}")
 	public CompteComptable deletedCompteComptable(@PathVariable("id") Long id) {
 		CompteComptable compte= compteComptableService.findOne(id);
 		compte.setDeleted(true);

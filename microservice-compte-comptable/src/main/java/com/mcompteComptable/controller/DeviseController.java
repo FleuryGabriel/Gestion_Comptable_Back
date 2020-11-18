@@ -20,18 +20,17 @@ import com.mcompteComptable.service.DeviseService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/devise")
 public class DeviseController {
 
 	@Autowired
 	DeviseService deviseService;
 	
-	@PostMapping(value="/save")
+	@PostMapping(value="/devises")
 	public Devise saveOrUpdate (@RequestBody Devise devise)
 	{
 		return deviseService.saveOrUpdate(devise);
 	}
-	@GetMapping(value="/findOne/{id}")
+	@GetMapping(value="/devises/{id}")
 	public Devise findOne (@PathVariable("id") Long id)
 	{
 		return deviseService.findOne(id);
@@ -43,12 +42,12 @@ public class DeviseController {
 	return deviseService.findAll();
 	}
 
-	@DeleteMapping(value="/delete/{id}")
+	@DeleteMapping(value="/devises/{id}")
 	public void deleteDevise(@PathVariable("id")Long id)
 	{
 		deviseService.delete(id);
 	}
-	@PutMapping(value="/deleted/{id}")
+	@PutMapping(value="/devises/{id}")
 	public Devise deletedDevise(@PathVariable("id")Long id) {
 		Devise devise= deviseService.findOne(id);
 		devise.setDeleted(true);
