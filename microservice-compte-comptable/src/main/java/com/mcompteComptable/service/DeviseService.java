@@ -1,8 +1,6 @@
 package com.mcompteComptable.service;
 
 import java.util.List;
-import java.util.Optional;
-
 import com.mcompteComptable.entities.Devise;
 
 public interface DeviseService {
