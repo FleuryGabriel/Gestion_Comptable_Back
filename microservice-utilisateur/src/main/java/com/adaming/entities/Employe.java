@@ -37,7 +37,7 @@ public class Employe implements Serializable{
 	@Column(name = "SALAIRE_EMPLOYE")
 	private float salaire;
 	
-	private boolean deleted;
+	private boolean deleted = false;
 	
 	@OneToMany
 	@JoinColumn(name = "AGENCE_ID", referencedColumnName = "ID_AGENCE")
