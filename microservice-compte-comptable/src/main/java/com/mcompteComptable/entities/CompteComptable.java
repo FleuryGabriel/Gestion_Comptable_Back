@@ -27,7 +27,7 @@ public class CompteComptable implements Serializable {
 	@Column(name="SENS")
 		private String sens;
 	@Column(name="DELETED")
-		private boolean deleted;
+		private boolean deleted=false;
 	@OneToOne
 	@JoinColumn( name="DEVISE", referencedColumnName ="ID_DEVISE")
 		private Devise devise;

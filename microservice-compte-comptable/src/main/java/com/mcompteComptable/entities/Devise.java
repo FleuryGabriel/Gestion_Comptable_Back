@@ -23,19 +23,17 @@ public class Devise implements Serializable {
 	@Column(name="NOM")
 	private String nom;
 	@Column(name="DELETED")
-	private boolean deleted;
+	private boolean deleted=false;
 	public Devise() {
 
 	}
 	public Devise(Long id, String code, String nom, boolean deleted) {
-		super();
 		this.id = id;
 		this.code = code;
 		this.nom = nom;
 		this.deleted = deleted;
 	}
 	public Devise(String code, String nom, boolean deleted) {
-		super();
 		this.code = code;
 		this.nom = nom;
 		this.deleted = deleted;
