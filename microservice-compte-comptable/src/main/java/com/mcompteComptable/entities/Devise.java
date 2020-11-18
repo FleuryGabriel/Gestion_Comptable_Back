@@ -16,6 +16,7 @@ public class Devise implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID_DEVISE")
 	private Long id;
 	@Column(name="CODE")
 	private String code;

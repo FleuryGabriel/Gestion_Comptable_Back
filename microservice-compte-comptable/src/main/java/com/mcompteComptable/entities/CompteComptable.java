@@ -18,7 +18,7 @@ public class CompteComptable implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID_COMPTE_COMTPABLE")
+	@Column(name="ID_COMPTE_COMPTABLE")
 		private Long id;
 	@Column(name="CODE")
 		private String code;
@@ -29,7 +29,7 @@ public class CompteComptable implements Serializable {
 	@Column(name="DELETED")
 		private boolean deleted;
 	@OneToOne
-	@JoinColumn( name="DEVISE")
+	@JoinColumn( name="DEVISE", referencedColumnName ="ID_DEVISE")
 		private Devise devise;
 	
 	public CompteComptable() {
