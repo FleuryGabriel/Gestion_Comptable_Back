@@ -32,11 +32,11 @@ public class Ligne_Ecriture  implements Serializable{
 	private boolean isDeleted = false;
 	
 	@ManyToOne
-	@JoinColumn(name = "ID_EXERCICE", referencedColumnName = "ID_EXERCICE")
+	@JoinColumn(name = "EXERCICE_FK", referencedColumnName = "ID_EXERCICE")
 	private Exercice exercice;
 	
 	@ManyToOne
-	@JoinColumn(name = "JOURNAL_ID", referencedColumnName = "JOURNAL_ID")
+	@JoinColumn(name = "JOURNAL_FK", referencedColumnName = "ID_JOURNAL")
 	private Journal journal;
 
 	public Ligne_Ecriture() {
