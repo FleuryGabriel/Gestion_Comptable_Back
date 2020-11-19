@@ -3,10 +3,14 @@ package com.adaming.entities;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Table(name = "LIGNE_ECRITURE")
+@Entity
 public class Ligne_Ecriture {
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -14,11 +18,11 @@ public class Ligne_Ecriture {
 	private Long id;
 	@Column(name = "LIBELLE_LIGNE_ECRITURE")
 	private String libelle;
-	@Column(name = "DEBIT_EXERCICES")
+	@Column(name = "DEBIT_LIGNE_ECRITURE")
 	private float debit;
-	@Column(name = "CREDIT_EXERCICES")
+	@Column(name = "CREDIT_LIGNE_ECRITURE")
 	private float credit;
-	@Column(name = "DATEECRITURE_EXERCICES")
+	@Column(name = "DATEECRITURE_LIGNE_ECRITURE")
 	private Date dateEcriture;
 	
 	private boolean isDeleted = false;
