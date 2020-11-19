@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -39,7 +39,7 @@ public class Employe implements Serializable{
 	
 	private boolean deleted = false;
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "AGENCE_ID", referencedColumnName = "ID_AGENCE")
 	private Agence agence;
 	
