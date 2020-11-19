@@ -14,6 +14,7 @@ public class Journal {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID_JOURNAL")
 	private Long id;
 	@Column(name = "CODE_JOURNAL")
 	private String code;

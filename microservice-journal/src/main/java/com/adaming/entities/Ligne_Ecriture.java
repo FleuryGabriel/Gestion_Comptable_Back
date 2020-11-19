@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Table(name = "LIGNE_ECRITURE")
@@ -15,6 +17,7 @@ public class Ligne_Ecriture {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID_LIGNE_ECRITURE")
 	private Long id;
 	@Column(name = "LIBELLE_LIGNE_ECRITURE")
 	private String libelle;
@@ -26,6 +29,14 @@ public class Ligne_Ecriture {
 	private Date dateEcriture;
 	
 	private boolean isDeleted = false;
+	
+	@ManyToOne
+	@JoinColumn(name = "ID_EXERCICE", referencedColumnName = "ID_EXERCICE")
+	private Exercice exercice;
+	
+	@ManyToOne
+	@JoinColumn(name = "JOURNAL_ID", referencedColumnName = "JOURNAL_ID")
+	private Journal journal;
 
 	public Ligne_Ecriture() {
 	}
