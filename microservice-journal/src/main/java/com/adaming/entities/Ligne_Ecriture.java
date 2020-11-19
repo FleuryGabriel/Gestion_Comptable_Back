@@ -42,20 +42,27 @@ public class Ligne_Ecriture  implements Serializable{
 	public Ligne_Ecriture() {
 	}
 
-	public Ligne_Ecriture(String libelle, float debit, float credit, Date dateEcriture) {
+	public Ligne_Ecriture(String libelle, float debit, float credit, Date dateEcriture, boolean isDeleted,
+			Exercice exercice, Journal journal) {
 		this.libelle = libelle;
 		this.debit = debit;
 		this.credit = credit;
 		this.dateEcriture = dateEcriture;
+		this.isDeleted = isDeleted;
+		this.exercice = exercice;
+		this.journal = journal;
 	}
 
-	public Ligne_Ecriture(Long id, String libelle, float debit, float credit, Date dateEcriture) {
-		super();
+	public Ligne_Ecriture(Long id, String libelle, float debit, float credit, Date dateEcriture, boolean isDeleted,
+			Exercice exercice, Journal journal) {
 		this.id = id;
 		this.libelle = libelle;
 		this.debit = debit;
 		this.credit = credit;
 		this.dateEcriture = dateEcriture;
+		this.isDeleted = isDeleted;
+		this.exercice = exercice;
+		this.journal = journal;
 	}
 
 	public Long getId() {
@@ -105,11 +112,22 @@ public class Ligne_Ecriture  implements Serializable{
 	public void setIsDeleted(boolean isDeleted) {
 		this.isDeleted = isDeleted;
 	}
-	
-	
-	
-	
-	
+
+	public Exercice getExercice() {
+		return exercice;
+	}
+
+	public void setExercice(Exercice exercice) {
+		this.exercice = exercice;
+	}
+
+	public Journal getJournal() {
+		return journal;
+	}
+
+	public void setJournal(Journal journal) {
+		this.journal = journal;
+	}
 	
 
 }
