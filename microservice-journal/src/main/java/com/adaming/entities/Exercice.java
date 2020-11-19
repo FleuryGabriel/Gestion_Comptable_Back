@@ -1,5 +1,6 @@
 package com.adaming.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -11,7 +12,7 @@ import javax.persistence.Table;
 
 @Table(name = "EXERCICE")
 @Entity
-public class Exercice {
+public class Exercice implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
