@@ -1,6 +1,7 @@
 package com.adaming.controllers;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,7 +12,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.adaming.dto.UtilisateurDTO;
 import com.adaming.entities.Utilisateur;
+import com.adaming.mappers.UtilisateurMapper;
 import com.adaming.services.UtilisateurService;
 
 @RestController
@@ -20,19 +23,22 @@ public class UtilisateurController {
 	@Autowired
 	private UtilisateurService uServ;
 	
+	@Autowired
+	private UtilisateurMapper uMap;
+
 	@GetMapping(value = "utilisateurs")
-	public List<Utilisateur> findAll() {
-		return uServ.findAll();
+	public List<UtilisateurDTO> findAll() {
+		return uServ.findAll().stream().map(e -> uMap.convertToUtilisateurDTO(e)).collect(Collectors.toList());
 	}
 
 	@GetMapping(value = "utilisateurs/{pId}")
-	public Utilisateur findOne(@PathVariable("pId") Long id) {
-		return uServ.findOne(id);
+	public UtilisateurDTO findOne(@PathVariable("pId") Long id) {
+		return uMap.convertToUtilisateurDTO(uServ.findOne(id));
 	}
 
 	@PostMapping(value = "utilisateurs")
-	public Utilisateur saveUtilisateur(@RequestBody Utilisateur rIn) {
-		return uServ.saveUtilisateur(rIn);
+	public UtilisateurDTO saveUtilisateur(@RequestBody Utilisateur eIn) {
+		return uMap.convertToUtilisateurDTO(uServ.saveUtilisateur(eIn));
 	}
 
 	@DeleteMapping(value = "utilisateurs/{pId}")
@@ -41,10 +47,10 @@ public class UtilisateurController {
 	}
 	
 	@PutMapping(value = "utilisateurs/{pId}")
-	public Utilisateur deletedUtilisateur(@PathVariable("pId") Long id) {
+	public UtilisateurDTO deletedUtilisateur(@PathVariable("pId") Long id) {
 		Utilisateur out = uServ.findOne(id);
 		out.setDeleted(true);
-		return uServ.saveUtilisateur(out);
+		return uMap.convertToUtilisateurDTO(uServ.saveUtilisateur(out));
 	}
 
 }
