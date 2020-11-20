@@ -9,26 +9,26 @@ public class LigneEcritureBean {
 	private float debit;
 	private float credit;
 	private Date dateEcriture;
-	private boolean isDeleted = false;
+	private boolean deleted = false;
 	
 	public LigneEcritureBean() {
 	}
-	public LigneEcritureBean(String libelle, float debit, float credit, Date dateEcriture, boolean isDeleted) {
+	public LigneEcritureBean(String libelle, float debit, float credit, Date dateEcriture, boolean deleted) {
 		super();
 		this.libelle = libelle;
 		this.debit = debit;
 		this.credit = credit;
 		this.dateEcriture = dateEcriture;
-		this.isDeleted = isDeleted;
+		this.deleted = deleted;
 	}
-	public LigneEcritureBean(Long id, String libelle, float debit, float credit, Date dateEcriture, boolean isDeleted) {
+	public LigneEcritureBean(Long id, String libelle, float debit, float credit, Date dateEcriture, boolean deleted) {
 		super();
 		this.id = id;
 		this.libelle = libelle;
 		this.debit = debit;
 		this.credit = credit;
 		this.dateEcriture = dateEcriture;
-		this.isDeleted = isDeleted;
+		this.deleted = deleted;
 	}
 	public Long getId() {
 		return id;
@@ -60,10 +60,10 @@ public class LigneEcritureBean {
 	public void setDateEcriture(Date dateEcriture) {
 		this.dateEcriture = dateEcriture;
 	}
-	public boolean isDeleted() {
-		return isDeleted;
+	public boolean deleted() {
+		return deleted;
 	}
-	public void setDeleted(boolean isDeleted) {
-		this.isDeleted = isDeleted;
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 }

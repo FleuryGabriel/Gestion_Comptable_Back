@@ -9,26 +9,26 @@ public class ExerciceBean {
 	private String libelle;
 	private Date dateDebut;
 	private Date dateFin;
-	private boolean isDeleted = false;
+	private boolean deleted  = false;
 	
 	public ExerciceBean() {
 	}
-	public ExerciceBean(String code, String libelle, Date dateDebut, Date dateFin, boolean isDeleted) {
+	public ExerciceBean(String code, String libelle, Date dateDebut, Date dateFin, boolean deleted ) {
 		super();
 		this.code = code;
 		this.libelle = libelle;
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
-		this.isDeleted = isDeleted;
+		this.deleted  = deleted ;
 	}
-	public ExerciceBean(Long id, String code, String libelle, Date dateDebut, Date dateFin, boolean isDeleted) {
+	public ExerciceBean(Long id, String code, String libelle, Date dateDebut, Date dateFin, boolean deleted ) {
 		super();
 		this.id = id;
 		this.code = code;
 		this.libelle = libelle;
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
-		this.isDeleted = isDeleted;
+		this.deleted  = deleted ;
 	}
 	public Long getId() {
 		return id;
@@ -60,10 +60,10 @@ public class ExerciceBean {
 	public void setDateFin(Date dateFin) {
 		this.dateFin = dateFin;
 	}
-	public boolean isDeleted() {
-		return isDeleted;
+	public boolean deleted () {
+		return deleted ;
 	}
-	public void setDeleted(boolean isDeleted) {
-		this.isDeleted = isDeleted;
+	public void setDeleted(boolean deleted ) {
+		this.deleted  = deleted ;
 	}
 }

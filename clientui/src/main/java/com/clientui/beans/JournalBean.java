@@ -5,22 +5,22 @@ public class JournalBean {
 	private Long id;
 	private String code;
 	private String libelle;
-	private boolean isDeleted = false;
+	private boolean deleted = false;
 	
 	public JournalBean() {
 	}
-	public JournalBean(String code, String libelle, boolean isDeleted) {
+	public JournalBean(String code, String libelle, boolean deleted) {
 		super();
 		this.code = code;
 		this.libelle = libelle;
-		this.isDeleted = isDeleted;
+		this.deleted = deleted;
 	}
-	public JournalBean(Long id, String code, String libelle, boolean isDeleted) {
+	public JournalBean(Long id, String code, String libelle, boolean deleted) {
 		super();
 		this.id = id;
 		this.code = code;
 		this.libelle = libelle;
-		this.isDeleted = isDeleted;
+		this.deleted = deleted;
 	}
 	public Long getId() {
 		return id;
@@ -40,10 +40,10 @@ public class JournalBean {
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
-	public boolean isDeleted() {
-		return isDeleted;
+	public boolean deleted() {
+		return deleted;
 	}
-	public void setDeleted(boolean isDeleted) {
-		this.isDeleted = isDeleted;
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 }
