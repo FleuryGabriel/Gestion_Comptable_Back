@@ -1,7 +1,7 @@
 package com.mcompteComptable.controller;
 
 import java.util.List;
-
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.mcompteComptable.DTO.DeviseDTO;
 import com.mcompteComptable.entities.Devise;
+import com.mcompteComptable.mapper.IDeviseMapper;
 import com.mcompteComptable.service.DeviseService;
 
 @RestController
@@ -21,22 +24,24 @@ public class DeviseController {
 
 	@Autowired
 	DeviseService deviseService;
+	@Autowired
+	IDeviseMapper deviseMapper;
 	
 	@PostMapping(value="/devises")
-	public Devise saveOrUpdate (@RequestBody Devise devise)
+	public DeviseDTO saveOrUpdate (@RequestBody Devise devise)
 	{
-		return deviseService.saveOrUpdate(devise);
+		return deviseMapper.convertToCompteComptableDTO(deviseService.saveOrUpdate(devise));
 	}
 	@GetMapping(value="/devises/{id}")
-	public Devise findOne (@PathVariable("id") Long id)
+	public DeviseDTO findOne (@PathVariable("id") Long id)
 	{
-		return deviseService.findOne(id);
+		return deviseMapper.convertToCompteComptableDTO(deviseService.findOne(id));
 		
 	}
 	@GetMapping (value="/devises")
-	public List<Devise> findAllDevises()
+	public List<DeviseDTO> findAllDevises()
 	{
-	return deviseService.findAll();
+	return (List<DeviseDTO>) deviseService.findAll().stream().map(d->deviseMapper.convertToCompteComptableDTO(d)).collect(Collectors.toList());
 	}
 
 	@DeleteMapping(value="/devises/{id}")
@@ -45,9 +50,9 @@ public class DeviseController {
 		deviseService.delete(id);
 	}
 	@PutMapping(value="/devises/{id}")
-	public Devise deletedDevise(@PathVariable("id")Long id) {
+	public DeviseDTO deletedDevise(@PathVariable("id")Long id) {
 		Devise devise= deviseService.findOne(id);
 		devise.setDeleted(true);
-		return deviseService.saveOrUpdate(devise);
+		return deviseMapper.convertToCompteComptableDTO(deviseService.saveOrUpdate(devise));
 	}
 }
