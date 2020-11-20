@@ -46,7 +46,7 @@ public class ExerciceController {
 	}
 	
 	@PutMapping(value="/exercices/{idExercice}")
-	public ExerciceDTO deletedExercice(@PathVariable("idExercice") Long idExercice, @RequestBody Exercice exercice) {
+	public ExerciceDTO deletedExercice(@PathVariable("idExercice") Long idExercice) {
 		
 		Exercice currentExercice = exerciceService.findOne(idExercice);
 		currentExercice.setIsDeleted(true);

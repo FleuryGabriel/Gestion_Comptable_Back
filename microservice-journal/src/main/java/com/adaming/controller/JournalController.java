@@ -47,7 +47,7 @@ public class JournalController {
 	}
 	
 	@PutMapping(value="/journaux/{idJournal}")
-	public JournalDTO deletedJournal(@PathVariable("idJournal") Long idJournal, @RequestBody Journal journal) {
+	public JournalDTO deletedJournal(@PathVariable("idJournal") Long idJournal) {
 		
 		Journal currentJournal = journalService.findOne(idJournal);
 		currentJournal.setIsDeleted(true);
