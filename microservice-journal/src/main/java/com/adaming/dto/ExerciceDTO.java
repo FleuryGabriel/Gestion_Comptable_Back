@@ -1,55 +1,28 @@
-package com.adaming.entities;
+package com.adaming.dto;
 
-import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+public class ExerciceDTO {
 
-@Table(name = "EXERCICE")
-@Entity
-public class Exercice implements Serializable{
-	
-	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID_EXERCICE")
 	private Long id;
-	@Column(name = "CODE_EXERCICE")
 	private String code;
-	@Column(name = "LIBELLE_EXERCICE")
 	private String libelle;
-	@Column(name = "DATEDEBUT_EXERCICE")
 	private Date dateDebut;
-	@Column(name = "DATEFIN_EXERCICE")
 	private Date dateFin;
-	@Column(name = "ISDELETED_EXERCICE")
 	private boolean isDeleted = false;
 	
-	
-	
-	
-	public Exercice() {
+	public ExerciceDTO() {
 	}
 	
 	
-	public Exercice(String code, String libelle, Date dateDebut, Date dateFin) {
+	public ExerciceDTO(String code, String libelle, Date dateDebut, Date dateFin) {
 		this.code = code;
 		this.libelle = libelle;
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
 	}
 
-	
-
-	public Exercice(Long id, String code, String libelle, Date dateDebut, Date dateFin) {
+	public ExerciceDTO(Long id, String code, String libelle, Date dateDebut, Date dateFin) {
 		this.id = id;
 		this.code = code;
 		this.libelle = libelle;
@@ -94,7 +67,4 @@ public class Exercice implements Serializable{
 	public void setIsDeleted(boolean deleted) {
 		this.isDeleted = deleted;
 	}	
-	
-	
-	
 }
