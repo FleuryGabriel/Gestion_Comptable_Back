@@ -50,7 +50,7 @@ public class JournalController {
 	public JournalDTO deletedJournal(@PathVariable("idJournal") Long idJournal) {
 		
 		Journal currentJournal = journalService.findOne(idJournal);
-		currentJournal.setIsDeleted(true);
+		currentJournal.setDeleted(true);
 		
 		return journalMapper.convertToJournalDTO(journalService.save(currentJournal));
 	}

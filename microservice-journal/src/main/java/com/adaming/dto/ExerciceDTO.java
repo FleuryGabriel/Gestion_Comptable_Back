@@ -9,7 +9,7 @@ public class ExerciceDTO {
 	private String libelle;
 	private Date dateDebut;
 	private Date dateFin;
-	private boolean isDeleted = false;
+	private boolean deleted = false;
 	
 	public ExerciceDTO() {
 	}
@@ -61,10 +61,10 @@ public class ExerciceDTO {
 	public void setDateFin(Date dateFin) {
 		this.dateFin = dateFin;
 	}
-	public boolean getIsDeleted() {
-		return isDeleted;
+	public boolean getDeleted() {
+		return deleted;
 	}
-	public void setIsDeleted(boolean deleted) {
-		this.isDeleted = deleted;
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}	
 }

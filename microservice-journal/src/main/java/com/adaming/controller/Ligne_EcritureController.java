@@ -50,7 +50,7 @@ public class Ligne_EcritureController {
 	public Ligne_EcritureDTO deletedLigne_Ecriture(@PathVariable("idLigne_Ecriture") Long idLigne_Ecriture) {
 		
 		Ligne_Ecriture currentLigne_Ecriture = ligne_ecritureService.findOne(idLigne_Ecriture);
-		currentLigne_Ecriture.setIsDeleted(true);
+		currentLigne_Ecriture.setDeleted(true);
 		
 		return ligne_ecritureMapper.convertToLigne_EcritureDTO(ligne_ecritureService.save(currentLigne_Ecriture));
 	}

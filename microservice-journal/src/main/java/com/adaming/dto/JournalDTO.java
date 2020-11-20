@@ -4,7 +4,7 @@ public class JournalDTO {
 	private Long id;
 	private String code;
 	private String libelle;
-	private boolean isDeleted = false;
+	private boolean deleted = false;
 	
 	
 	public JournalDTO() {
@@ -54,12 +54,12 @@ public class JournalDTO {
 	}
 
 
-	public boolean isDeleted() {
-		return isDeleted;
+	public boolean getDeleted() {
+		return deleted;
 	}
 
 
-	public void setIsDeleted(boolean isDeleted) {
-		this.isDeleted = isDeleted;
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 }

@@ -22,8 +22,8 @@ public class Journal  implements Serializable{
 	private String code;
 	@Column(name = "LIBELLE_JOURNAL")
 	private String libelle;
-	@Column(name = "ISDELETED_JOURNAL")
-	private boolean isDeleted = false;
+	@Column(name = "DELETED_JOURNAL")
+	private boolean deleted = false;
 	
 	
 	public Journal() {
@@ -73,13 +73,13 @@ public class Journal  implements Serializable{
 	}
 
 
-	public boolean isDeleted() {
-		return isDeleted;
+	public boolean getDeleted() {
+		return deleted;
 	}
 
 
-	public void setIsDeleted(boolean isDeleted) {
-		this.isDeleted = isDeleted;
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 	
 	

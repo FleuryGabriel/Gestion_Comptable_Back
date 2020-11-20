@@ -13,7 +13,7 @@ public class Ligne_EcritureDTO {
 	private float credit;
 	private Date dateEcriture;
 	
-	private boolean isDeleted = false;
+	private boolean deleted = false;
 
 	private Exercice exercice;
 
@@ -22,25 +22,25 @@ public class Ligne_EcritureDTO {
 	public Ligne_EcritureDTO() {
 	}
 
-	public Ligne_EcritureDTO(String libelle, float debit, float credit, Date dateEcriture, boolean isDeleted,
+	public Ligne_EcritureDTO(String libelle, float debit, float credit, Date dateEcriture, boolean deleted,
 			Exercice exercice, Journal journal) {
 		this.libelle = libelle;
 		this.debit = debit;
 		this.credit = credit;
 		this.dateEcriture = dateEcriture;
-		this.isDeleted = isDeleted;
+		this.deleted = deleted;
 		this.exercice = exercice;
 		this.journal = journal;
 	}
 
-	public Ligne_EcritureDTO(Long id, String libelle, float debit, float credit, Date dateEcriture, boolean isDeleted,
+	public Ligne_EcritureDTO(Long id, String libelle, float debit, float credit, Date dateEcriture, boolean deleted,
 			Exercice exercice, Journal journal) {
 		this.id = id;
 		this.libelle = libelle;
 		this.debit = debit;
 		this.credit = credit;
 		this.dateEcriture = dateEcriture;
-		this.isDeleted = isDeleted;
+		this.deleted = deleted;
 		this.exercice = exercice;
 		this.journal = journal;
 	}
@@ -85,12 +85,12 @@ public class Ligne_EcritureDTO {
 		this.dateEcriture = dateEcriture;
 	}
 
-	public boolean isDeleted() {
-		return isDeleted;
+	public boolean getDeleted() {
+		return deleted;
 	}
 
-	public void setIsDeleted(boolean isDeleted) {
-		this.isDeleted = isDeleted;
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 
 	public Exercice getExercice() {

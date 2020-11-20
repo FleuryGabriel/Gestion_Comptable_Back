@@ -30,8 +30,8 @@ public class Exercice implements Serializable{
 	private Date dateDebut;
 	@Column(name = "DATEFIN_EXERCICE")
 	private Date dateFin;
-	@Column(name = "ISDELETED_EXERCICE")
-	private boolean isDeleted = false;
+	@Column(name = "DELETED_EXERCICE")
+	private boolean deleted = false;
 	
 	
 	
@@ -88,11 +88,11 @@ public class Exercice implements Serializable{
 	public void setDateFin(Date dateFin) {
 		this.dateFin = dateFin;
 	}
-	public boolean getIsDeleted() {
-		return isDeleted;
+	public boolean getDeleted() {
+		return deleted;
 	}
-	public void setIsDeleted(boolean deleted) {
-		this.isDeleted = deleted;
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}	
 	
 	

@@ -49,7 +49,7 @@ public class ExerciceController {
 	public ExerciceDTO deletedExercice(@PathVariable("idExercice") Long idExercice) {
 		
 		Exercice currentExercice = exerciceService.findOne(idExercice);
-		currentExercice.setIsDeleted(true);
+		currentExercice.setDeleted(true);
 		
 		return exerciceMapper.convertToExerciceDTO(exerciceService.save(currentExercice));
 	}
