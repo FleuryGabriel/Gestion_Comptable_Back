@@ -34,4 +34,23 @@ public class UtilisateurServiceImpl implements UtilisateurService{
 		uRep.deleteById(id);
 	}
 
+	@Override
+	public Utilisateur findByLogin(String login) {
+		return uRep.findByLogin(login);
+	}
+
+	@Override
+	public List<Utilisateur> findByNom(String nom) {
+		return uRep.findByNom(nom);
+	}
+
+	@Override
+	public Utilisateur authentifier(String login, String password) {
+		Utilisateur utilisateur = uRep.findByLogin(login);
+		if (!utilisateur.getPassword().equals(password)) {
+		 utilisateur =null; }
+		return utilisateur;
+
+	}
+
 }

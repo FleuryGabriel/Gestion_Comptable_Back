@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.adaming.dto.UtilisateurDTO;
@@ -52,5 +53,25 @@ public class UtilisateurController {
 		out.setDeleted(true);
 		return uMap.convertToUtilisateurDTO(uServ.saveUtilisateur(out));
 	}
+	
+	@GetMapping(value="/utilisateursByNom")
+	public List<UtilisateurDTO> findUtilisateurByNom(@RequestParam(name="nom") String nom)
+	{
+		return uServ.findByNom(nom).stream().map(e -> uMap.convertToUtilisateurDTO(e)).collect(Collectors.toList());
+	}
+	
+	
+	@GetMapping(value="/utilisateurByLogin")
+	public UtilisateurDTO findUtilisateurByLogin(@RequestParam(name="login") String login)
+	{
+		return uMap.convertToUtilisateurDTO(uServ.findByLogin(login));
+	}
+	
+	@GetMapping(value="/authentification")
+	public Utilisateur authentification(@RequestParam("login") String login,@RequestParam String password)
+	{
+		return uServ.authentifier(login, password);
+	}
+
 
 }
