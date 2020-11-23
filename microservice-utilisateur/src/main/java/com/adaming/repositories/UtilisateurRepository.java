@@ -11,6 +11,5 @@ import com.adaming.entities.Utilisateur;
 public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long>{
 
 	public Utilisateur findByLogin(String login);
-	public List<Utilisateur> findByNom(String nom);
 
 }

@@ -40,11 +40,6 @@ public class UtilisateurServiceImpl implements UtilisateurService{
 	}
 
 	@Override
-	public List<Utilisateur> findByNom(String nom) {
-		return uRep.findByNom(nom);
-	}
-
-	@Override
 	public Utilisateur authentifier(String login, String password) {
 		Utilisateur utilisateur = uRep.findByLogin(login);
 		if (!utilisateur.getPassword().equals(password)) {

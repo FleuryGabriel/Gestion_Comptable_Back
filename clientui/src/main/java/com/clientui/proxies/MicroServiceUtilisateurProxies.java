@@ -51,10 +51,6 @@ public interface MicroServiceUtilisateurProxies {
 	@PutMapping(value = "/utilisateurs/{id}")
 	public void deletedUtilisateur(@PathVariable long id);
 	
-	@GetMapping(value="/utilisateursByNom")
-	public List<UtilisateurBean> findUtilisateurByNom(@RequestParam(name="nom") String nom);
-	
-	
 	@GetMapping(value="/utilisateurByLogin")
 	public UtilisateurBean findUtilisateurByLogin(@RequestParam(name="login") String login);
 	

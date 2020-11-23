@@ -54,13 +54,6 @@ public class UtilisateurController {
 		return uMap.convertToUtilisateurDTO(uServ.saveUtilisateur(out));
 	}
 	
-	@GetMapping(value="/utilisateursByNom")
-	public List<UtilisateurDTO> findUtilisateurByNom(@RequestParam(name="nom") String nom)
-	{
-		return uServ.findByNom(nom).stream().map(e -> uMap.convertToUtilisateurDTO(e)).collect(Collectors.toList());
-	}
-	
-	
 	@GetMapping(value="/utilisateurByLogin")
 	public UtilisateurDTO findUtilisateurByLogin(@RequestParam(name="login") String login)
 	{

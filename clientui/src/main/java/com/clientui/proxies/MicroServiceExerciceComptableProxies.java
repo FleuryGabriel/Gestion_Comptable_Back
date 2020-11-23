@@ -13,8 +13,8 @@ import com.clientui.beans.ExerciceBean;
 import com.clientui.beans.JournalBean;
 import com.clientui.beans.LigneEcritureBean;;
 
-@FeignClient(name = "microservice-exercice-comptable")
-@RibbonClient(name = "microservice-exercice-comptable")
+@FeignClient(name = "microservice-journal")
+@RibbonClient(name = "microservice-journal")
 public interface MicroServiceExerciceComptableProxies {
 
 	// Exercice
