@@ -45,7 +45,6 @@ public class UtilisateurServiceImpl implements UtilisateurService{
 		if (!utilisateur.getPassword().equals(password)) {
 		 utilisateur =null; }
 		return utilisateur;
-
 	}
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import com.adaming.mappers.UtilisateurMapper;
 import com.adaming.services.UtilisateurService;
 
 @RestController
+@CrossOrigin
 public class UtilisateurController {
 	
 	@Autowired
@@ -54,13 +56,13 @@ public class UtilisateurController {
 		return uMap.convertToUtilisateurDTO(uServ.saveUtilisateur(out));
 	}
 	
-	@GetMapping(value="/utilisateurByLogin")
+	@GetMapping(value="/utilisateursByLogin")
 	public UtilisateurDTO findUtilisateurByLogin(@RequestParam(name="login") String login)
 	{
 		return uMap.convertToUtilisateurDTO(uServ.findByLogin(login));
 	}
 	
-	@GetMapping(value="/authentification")
+	@GetMapping(value="/utilisateursAuthentification")
 	public Utilisateur authentification(@RequestParam("login") String login,@RequestParam String password)
 	{
 		return uServ.authentifier(login, password);
