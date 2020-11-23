@@ -30,7 +30,7 @@ public class Employe implements Serializable{
 	private Date dateNaissance;
 	@Column(name = "CIN_EMPLOYE")
 	private Long cin;
-	@Column(name = "EMAIL_EMPLOYE")
+	@Column(name = "EMAIL_EMPLOYE", unique=true)
 	private String email;
 	@Column(name = "TEL_EMPLOYE")
 	private Long tel;

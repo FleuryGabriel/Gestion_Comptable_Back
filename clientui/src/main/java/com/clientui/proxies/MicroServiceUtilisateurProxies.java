@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import com.clientui.beans.AgenceBean;
 import com.clientui.beans.EmployeBean;
 import com.clientui.beans.RoleBean;
@@ -50,6 +50,16 @@ public interface MicroServiceUtilisateurProxies {
 
 	@PutMapping(value = "/utilisateurs/{id}")
 	public void deletedUtilisateur(@PathVariable long id);
+	
+	@GetMapping(value="/utilisateursByNom")
+	public List<UtilisateurBean> findUtilisateurByNom(@RequestParam(name="nom") String nom);
+	
+	
+	@GetMapping(value="/utilisateurByLogin")
+	public UtilisateurBean findUtilisateurByLogin(@RequestParam(name="login") String login);
+	
+	@GetMapping(value="/authentification")
+	public UtilisateurBean authentification(@RequestParam("login") String login,@RequestParam String password);
 
 	// Employe
 	@PostMapping(value = "/employees")

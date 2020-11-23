@@ -23,9 +23,9 @@ public class Utilisateur implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_UTILISATEUR")
 	private Long id;
-	@Column(name = "LOGIN_UTILISATEUR")
+	@Column(name = "LOGIN_UTILISATEUR", unique=true, nullable=false)
 	private String login;
-	@Column(name = "PASSWORD_UTILISATEUR")
+	@Column(name = "PASSWORD_UTILISATEUR", nullable=false)
 	private String password;
 	@Column(name = "DATECREATION_UTILISATEUR")
 	private Date dateCreation;
