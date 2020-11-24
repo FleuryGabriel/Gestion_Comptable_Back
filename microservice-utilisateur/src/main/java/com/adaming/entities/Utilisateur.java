@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "UTILISATEUR")
@@ -28,6 +30,7 @@ public class Utilisateur implements Serializable {
 	@Column(name = "PASSWORD_UTILISATEUR", nullable=false)
 	private String password;
 	@Column(name = "DATECREATION_UTILISATEUR")
+	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
 	@Column(name = "ENABLED_UTILISATEUR")
 	private boolean enabled;

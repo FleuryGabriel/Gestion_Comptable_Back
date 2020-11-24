@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "EMPLOYE")
@@ -27,6 +29,7 @@ public class Employe implements Serializable{
 	@Column(name = "PRENOM_EMPLOYE")
 	private String prenom;
 	@Column(name = "DATENAISSANCE_EMPLOYE")
+	@Temporal(TemporalType.DATE)
 	private Date dateNaissance;
 	@Column(name = "CIN_EMPLOYE")
 	private Long cin;

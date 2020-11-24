@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Table(name = "LIGNE_ECRITURE")
 @Entity
@@ -27,6 +29,7 @@ public class Ligne_Ecriture  implements Serializable{
 	@Column(name = "CREDIT_LIGNE_ECRITURE")
 	private float credit;
 	@Column(name = "DATEECRITURE_LIGNE_ECRITURE")
+	@Temporal(TemporalType.DATE)
 	private Date dateEcriture;
 	@Column(name = "DELETED_LIGNE_ECRITURE")
 	private boolean deleted = false;

@@ -27,8 +27,10 @@ public class Exercice implements Serializable{
 	@Column(name = "LIBELLE_EXERCICE")
 	private String libelle;
 	@Column(name = "DATEDEBUT_EXERCICE")
+	@Temporal(TemporalType.DATE)
 	private Date dateDebut;
 	@Column(name = "DATEFIN_EXERCICE")
+	@Temporal(TemporalType.DATE)
 	private Date dateFin;
 	@Column(name = "DELETED_EXERCICE")
 	private boolean deleted = false;
