@@ -6,27 +6,24 @@ public class LigneEcritureBean {
 
 	private Long id;
 	private String libelle;
-	private float debit;
-	private float credit;
+	private float virement;
 	private Date dateEcriture;
 	private boolean deleted = false;
 	
 	public LigneEcritureBean() {
 	}
-	public LigneEcritureBean(String libelle, float debit, float credit, Date dateEcriture, boolean deleted) {
+	public LigneEcritureBean(String libelle, float virement, Date dateEcriture, boolean deleted) {
 		super();
 		this.libelle = libelle;
-		this.debit = debit;
-		this.credit = credit;
+		this.virement = virement;
 		this.dateEcriture = dateEcriture;
 		this.deleted = deleted;
 	}
-	public LigneEcritureBean(Long id, String libelle, float debit, float credit, Date dateEcriture, boolean deleted) {
+	public LigneEcritureBean(Long id, String libelle, float virement, Date dateEcriture, boolean deleted) {
 		super();
 		this.id = id;
 		this.libelle = libelle;
-		this.debit = debit;
-		this.credit = credit;
+		this.virement = virement;
 		this.dateEcriture = dateEcriture;
 		this.deleted = deleted;
 	}
@@ -42,18 +39,7 @@ public class LigneEcritureBean {
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
-	public float getDebit() {
-		return debit;
-	}
-	public void setDebit(float debit) {
-		this.debit = debit;
-	}
-	public float getCredit() {
-		return credit;
-	}
-	public void setCredit(float credit) {
-		this.credit = credit;
-	}
+
 	public Date getDateEcriture() {
 		return dateEcriture;
 	}
@@ -66,4 +52,11 @@ public class LigneEcritureBean {
 	public void setDeleted(boolean deleted) {
 		this.deleted = deleted;
 	}
+	public float getVirement() {
+		return virement;
+	}
+	public void setVirement(float virement) {
+		this.virement = virement;
+	}
+	
 }

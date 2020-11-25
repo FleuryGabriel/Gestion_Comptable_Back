@@ -24,7 +24,7 @@ public class Ligne_Ecriture  implements Serializable{
 	private Long id;
 	@Column(name = "LIBELLE_LIGNE_ECRITURE")
 	private String libelle;
-	@Column(name = "DEBIT_LIGNE_ECRITURE")
+	@Column(name = "VIREMENT_LIGNE_ECRITURE")
 	private float virement;
 	@Column(name = "DATEECRITURE_LIGNE_ECRITURE")
 	@Temporal(TemporalType.DATE)

@@ -9,8 +9,7 @@ public class Ligne_EcritureDTO {
 	
 	private Long id;
 	private String libelle;
-	private float debit;
-	private float credit;
+	private float virement;
 	private Date dateEcriture;
 	
 	private boolean deleted = false;
@@ -22,23 +21,21 @@ public class Ligne_EcritureDTO {
 	public Ligne_EcritureDTO() {
 	}
 
-	public Ligne_EcritureDTO(String libelle, float debit, float credit, Date dateEcriture, boolean deleted,
+	public Ligne_EcritureDTO(String libelle, float virement, Date dateEcriture, boolean deleted,
 			Exercice exercice, Journal journal) {
 		this.libelle = libelle;
-		this.debit = debit;
-		this.credit = credit;
+		this.virement = virement;
 		this.dateEcriture = dateEcriture;
 		this.deleted = deleted;
 		this.exercice = exercice;
 		this.journal = journal;
 	}
 
-	public Ligne_EcritureDTO(Long id, String libelle, float debit, float credit, Date dateEcriture, boolean deleted,
+	public Ligne_EcritureDTO(Long id, String libelle, float virement, Date dateEcriture, boolean deleted,
 			Exercice exercice, Journal journal) {
 		this.id = id;
 		this.libelle = libelle;
-		this.debit = debit;
-		this.credit = credit;
+		this.virement = virement;
 		this.dateEcriture = dateEcriture;
 		this.deleted = deleted;
 		this.exercice = exercice;
@@ -61,20 +58,13 @@ public class Ligne_EcritureDTO {
 		this.libelle = libelle;
 	}
 
-	public float getDebit() {
-		return debit;
+
+	public float getVirement() {
+		return virement;
 	}
 
-	public void setDebit(float debit) {
-		this.debit = debit;
-	}
-
-	public float getCredit() {
-		return credit;
-	}
-
-	public void setCredit(float credit) {
-		this.credit = credit;
+	public void setVirement(float virement) {
+		this.virement = virement;
 	}
 
 	public Date getDateEcriture() {
