@@ -47,4 +47,9 @@ public class UtilisateurServiceImpl implements UtilisateurService{
 		return utilisateur;
 	}
 
+	@Override
+	public List<Utilisateur> findWithLogin(String login) {
+		return uRep.findByLoginContaining(login);
+	}
+
 }

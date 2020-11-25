@@ -67,6 +67,12 @@ public class UtilisateurController {
 	{
 		return uServ.authentifier(login, password);
 	}
+	
+	@GetMapping(value="/utilisateursWithLogin")
+	public List<UtilisateurDTO> findUtilisateurWithLogin(@RequestParam(name="login") String login)
+	{
+		return uServ.findWithLogin(login).stream().map(e -> uMap.convertToUtilisateurDTO(e)).collect(Collectors.toList());
+	}
 
 
 }
