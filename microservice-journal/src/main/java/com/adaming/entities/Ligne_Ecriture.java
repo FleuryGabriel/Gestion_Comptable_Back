@@ -25,9 +25,7 @@ public class Ligne_Ecriture  implements Serializable{
 	@Column(name = "LIBELLE_LIGNE_ECRITURE")
 	private String libelle;
 	@Column(name = "DEBIT_LIGNE_ECRITURE")
-	private float debit;
-	@Column(name = "CREDIT_LIGNE_ECRITURE")
-	private float credit;
+	private float virement;
 	@Column(name = "DATEECRITURE_LIGNE_ECRITURE")
 	@Temporal(TemporalType.DATE)
 	private Date dateEcriture;
@@ -45,23 +43,21 @@ public class Ligne_Ecriture  implements Serializable{
 	public Ligne_Ecriture() {
 	}
 
-	public Ligne_Ecriture(String libelle, float debit, float credit, Date dateEcriture, boolean deleted,
+	public Ligne_Ecriture(String libelle, float virement, Date dateEcriture, boolean deleted,
 			Exercice exercice, Journal journal) {
 		this.libelle = libelle;
-		this.debit = debit;
-		this.credit = credit;
+		this.virement = virement;
 		this.dateEcriture = dateEcriture;
 		this.deleted = deleted;
 		this.exercice = exercice;
 		this.journal = journal;
 	}
 
-	public Ligne_Ecriture(Long id, String libelle, float debit, float credit, Date dateEcriture, boolean deleted,
+	public Ligne_Ecriture(Long id, String libelle, float virement, Date dateEcriture, boolean deleted,
 			Exercice exercice, Journal journal) {
 		this.id = id;
 		this.libelle = libelle;
-		this.debit = debit;
-		this.credit = credit;
+		this.virement = virement;
 		this.dateEcriture = dateEcriture;
 		this.deleted = deleted;
 		this.exercice = exercice;
@@ -84,21 +80,6 @@ public class Ligne_Ecriture  implements Serializable{
 		this.libelle = libelle;
 	}
 
-	public float getDebit() {
-		return debit;
-	}
-
-	public void setDebit(float debit) {
-		this.debit = debit;
-	}
-
-	public float getCredit() {
-		return credit;
-	}
-
-	public void setCredit(float credit) {
-		this.credit = credit;
-	}
 
 	public Date getDateEcriture() {
 		return dateEcriture;
@@ -131,6 +112,16 @@ public class Ligne_Ecriture  implements Serializable{
 	public void setJournal(Journal journal) {
 		this.journal = journal;
 	}
+
+	public float getVirement() {
+		return virement;
+	}
+
+	public void setVirement(float virement) {
+		this.virement = virement;
+	}
+	
+	
 	
 
 }
