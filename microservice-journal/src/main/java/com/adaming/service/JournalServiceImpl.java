@@ -33,6 +33,11 @@ public class JournalServiceImpl implements JournalService{
 		journalRepository.deleteById(idJournal);
 		
 	}
+
+	@Override
+	public List<Journal> findNotDeleted() {
+		return journalRepository.findByDeleted(false);
+	}
 	
 	
 

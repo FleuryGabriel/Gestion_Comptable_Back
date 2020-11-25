@@ -35,4 +35,9 @@ public class ExerciceServiceImpl implements ExerciceService{
 		
 	}
 
+	@Override
+	public List<Exercice> findNotDeleted() {
+		return exerciceRepository.findByDeleted(false);
+	}
+
 }

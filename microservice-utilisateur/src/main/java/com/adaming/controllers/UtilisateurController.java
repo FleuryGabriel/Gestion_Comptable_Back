@@ -73,6 +73,11 @@ public class UtilisateurController {
 	{
 		return uServ.findWithLogin(login).stream().map(e -> uMap.convertToUtilisateurDTO(e)).collect(Collectors.toList());
 	}
+	
+	@GetMapping(value="/utilisateursNotDeleted")
+	public List<UtilisateurDTO> findNotDeleted(){
+		return uServ.findNotDeleted().stream().map(e -> uMap.convertToUtilisateurDTO(e)).collect(Collectors.toList());
+	}
 
 
 }
