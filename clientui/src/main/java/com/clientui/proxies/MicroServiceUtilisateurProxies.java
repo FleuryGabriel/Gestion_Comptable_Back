@@ -51,10 +51,10 @@ public interface MicroServiceUtilisateurProxies {
 	@PutMapping(value = "/utilisateurs/{id}")
 	public void deletedUtilisateur(@PathVariable long id);
 	
-	@GetMapping(value="/utilisateurByLogin")
+	@GetMapping(value="/utilisateursByLogin")
 	public UtilisateurBean findUtilisateurByLogin(@RequestParam(name="login") String login);
 	
-	@GetMapping(value="/authentification")
+	@GetMapping(value="/utilisateursAuthentification")
 	public UtilisateurBean authentification(@RequestParam("login") String login,@RequestParam String password);
 
 	// Employe

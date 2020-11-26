@@ -91,12 +91,12 @@ public class ClientController {
 		msup.deletedUtilisateur(id);
 	}
 
-	@GetMapping(value = "/utilisateurByLogin")
+	@GetMapping(value = "/utilisateursByLogin")
 	public UtilisateurBean findUtilisateurByLogin(@RequestParam(name = "login") String login) {
 		return msup.findUtilisateurByLogin(login);
 	}
 
-	@GetMapping(value = "/authentification")
+	@GetMapping(value = "/utilisateursAuthentification")
 	public UtilisateurBean authentification(@RequestParam("login") String login, @RequestParam String password) {
 		return msup.authentification(login, password);
 	}
