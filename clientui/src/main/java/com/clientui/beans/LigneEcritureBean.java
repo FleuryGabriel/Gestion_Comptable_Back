@@ -2,6 +2,8 @@ package com.clientui.beans;
 
 import java.util.Date;
 
+
+
 public class LigneEcritureBean {
 
 	private Long id;
@@ -9,24 +11,36 @@ public class LigneEcritureBean {
 	private float virement;
 	private Date dateEcriture;
 	private boolean deleted = false;
+	private ExerciceBean exercice;
+	private JournalBean journal;
+	
 	
 	public LigneEcritureBean() {
 	}
-	public LigneEcritureBean(String libelle, float virement, Date dateEcriture, boolean deleted) {
-		super();
-		this.libelle = libelle;
-		this.virement = virement;
-		this.dateEcriture = dateEcriture;
-		this.deleted = deleted;
-	}
-	public LigneEcritureBean(Long id, String libelle, float virement, Date dateEcriture, boolean deleted) {
-		super();
+
+	public LigneEcritureBean(Long id, String libelle, float virement, Date dateEcriture, boolean deleted,
+			ExerciceBean exercice, JournalBean journal) {
+	
 		this.id = id;
 		this.libelle = libelle;
 		this.virement = virement;
 		this.dateEcriture = dateEcriture;
 		this.deleted = deleted;
+		this.exercice = exercice;
+		this.journal = journal;
 	}
+
+	public LigneEcritureBean(String libelle, float virement, Date dateEcriture, boolean deleted, ExerciceBean exercice,
+			JournalBean journal) {
+	
+		this.libelle = libelle;
+		this.virement = virement;
+		this.dateEcriture = dateEcriture;
+		this.deleted = deleted;
+		this.exercice = exercice;
+		this.journal = journal;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -57,6 +71,26 @@ public class LigneEcritureBean {
 	}
 	public void setVirement(float virement) {
 		this.virement = virement;
+	}
+
+	public ExerciceBean getExercice() {
+		return exercice;
+	}
+
+	public void setExercice(ExerciceBean exercice) {
+		this.exercice = exercice;
+	}
+
+	public JournalBean getJournal() {
+		return journal;
+	}
+
+	public void setJournal(JournalBean journal) {
+		this.journal = journal;
+	}
+
+	public boolean isDeleted() {
+		return deleted;
 	}
 	
 }
