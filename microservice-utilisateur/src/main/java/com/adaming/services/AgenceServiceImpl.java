@@ -34,4 +34,9 @@ public class AgenceServiceImpl implements AgenceService{
 		aRep.deleteById(id);
 	}
 
+	@Override
+	public List<Agence> findNotDeleted() {
+		return aRep.findByDeleted(false);
+	}
+
 }

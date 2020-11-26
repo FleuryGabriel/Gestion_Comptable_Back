@@ -56,4 +56,9 @@ public class AgenceController {
 		return aMap.convertToAgenceDTO(aServ.saveAgence(out));
 	}
 	
+	@GetMapping(value = "agencesNotDeleted")
+	public List<AgenceDTO> findNotDeleted(){
+		return aServ.findNotDeleted().stream().map(a -> aMap.convertToAgenceDTO(a)).collect(Collectors.toList());
+	}
+	
 }

@@ -11,6 +11,8 @@ public interface ExerciceService {
 	
 	Exercice save(Exercice exercice);
 	
-	void delete(Long idExercice);	
+	void delete(Long idExercice);
+	
+	List<Exercice> findNotDeleted();
 
 }

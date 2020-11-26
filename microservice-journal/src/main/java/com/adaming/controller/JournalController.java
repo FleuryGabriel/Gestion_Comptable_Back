@@ -54,4 +54,9 @@ public class JournalController {
 		
 		return journalMapper.convertToJournalDTO(journalService.save(currentJournal));
 	}
+	
+	@GetMapping(value = "/journauxNotDeleted")
+	public List<JournalDTO> findNotDeleted(){
+		return journalService.findNotDeleted().stream().map(j -> journalMapper.convertToJournalDTO(j)).collect(Collectors.toList());
+	}
 }

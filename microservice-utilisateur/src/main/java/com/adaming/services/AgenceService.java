@@ -10,5 +10,6 @@ public interface AgenceService {
 	Agence findOne(Long id);
 	Agence saveAgence(Agence aIn);
 	void deleteAgence(Long id);
+	List<Agence> findNotDeleted();
 
 }

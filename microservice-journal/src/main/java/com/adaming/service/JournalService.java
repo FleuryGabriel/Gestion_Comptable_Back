@@ -12,5 +12,7 @@ public interface JournalService {
 	Journal save(Journal journal);
 
 	void delete(Long idJournal);
+	
+	List<Journal> findNotDeleted();
 
 }

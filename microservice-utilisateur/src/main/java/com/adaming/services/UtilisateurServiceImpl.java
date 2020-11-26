@@ -52,4 +52,9 @@ public class UtilisateurServiceImpl implements UtilisateurService{
 		return uRep.findByLoginContaining(login);
 	}
 
+	@Override
+	public List<Utilisateur> findNotDeleted() {
+		return uRep.findByDeleted(false);
+	}
+
 }

@@ -14,5 +14,6 @@ public interface UtilisateurService {
 	public Utilisateur findByLogin(String login);
 	public Utilisateur authentifier(String login,String password);
 	public List<Utilisateur> findWithLogin(String login);
+	public List<Utilisateur> findNotDeleted();
 	
 }

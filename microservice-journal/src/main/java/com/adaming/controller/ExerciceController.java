@@ -53,5 +53,10 @@ public class ExerciceController {
 		
 		return exerciceMapper.convertToExerciceDTO(exerciceService.save(currentExercice));
 	}
+	
+	@GetMapping(value = "/exercicesNotDeleted")
+	public List<ExerciceDTO> findNotDeleted(){
+		return exerciceService.findNotDeleted().stream().map(e -> exerciceMapper.convertToExerciceDTO(e)).collect(Collectors.toList());
+	}
 
 }
