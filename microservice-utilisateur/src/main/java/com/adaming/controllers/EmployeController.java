@@ -54,4 +54,9 @@ public class EmployeController {
 		out.setDeleted(true);
 		return eMap.convertToEmployeDTO(eServ.saveEmploye(out));
 	}
+	
+	@GetMapping(value="/employesNotDeleted")
+	public List<EmployeDTO> findNotDeleted(){
+		return eServ.findNotDeleted().stream().map(e -> eMap.convertToEmployeDTO(e)).collect(Collectors.toList());
+	}
 }

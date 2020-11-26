@@ -7,12 +7,15 @@ import org.springframework.stereotype.Service;
 
 import com.adaming.entities.Employe;
 import com.adaming.repositories.EmployeRepository;
+import com.adaming.repositories.UtilisateurRepository;
 
 @Service
 public class EmployeServiceImpl implements EmployeService{
 
 	@Autowired
 	private EmployeRepository eRep;
+	@Autowired
+	//private UtilisateurRepository uRep;
 	
 	@Override
 	public List<Employe> findAll() {
@@ -31,7 +34,13 @@ public class EmployeServiceImpl implements EmployeService{
 
 	@Override
 	public void deleteEmploye(Long id) {
+		
 		eRep.deleteById(id);
+	}
+
+	@Override
+	public List<Employe> findNotDeleted() {
+		return eRep.findByDeleted(false);
 	}
 
 	

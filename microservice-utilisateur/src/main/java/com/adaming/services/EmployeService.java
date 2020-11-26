@@ -10,5 +10,6 @@ public interface EmployeService {
 	Employe findOne(Long id);
 	Employe saveEmploye(Employe eIn);
 	void deleteEmploye(Long id);
+	public List<Employe> findNotDeleted();
 
 }

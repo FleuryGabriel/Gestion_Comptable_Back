@@ -18,5 +18,7 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long>{
 	public List<Utilisateur> findByLoginContaining(String login);
 	
 	public List<Utilisateur> findByDeleted(boolean bool);
+	
+	public void deleteByEmploye(Long employeID);
 
 }
