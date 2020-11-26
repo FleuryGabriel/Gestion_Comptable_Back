@@ -49,20 +49,20 @@ public interface MicroServiceExerciceComptableProxies {
 	@PutMapping(value = "/ligneEcritures/{id}")
 	public void deletedLigneEcriture(@PathVariable long id);
 
-	// Journal
-	@PostMapping(value = "/journals")
+	// Journaux
+	@PostMapping(value = "/journauxs")
 	public void addJournal(@RequestBody JournalBean j);
 
-	@GetMapping(value = "/journals")
+	@GetMapping(value = "/journauxs")
 	public List<JournalBean> getAllJournal();
 
-	@GetMapping(value = "/journals/{id}")
+	@GetMapping(value = "/journauxs/{id}")
 	public JournalBean findByIdJournal(@PathVariable long id);
 
-	@DeleteMapping(value = "/journals/{id}")
+	@DeleteMapping(value = "/journauxs/{id}")
 	public void deleteJournal(@PathVariable long id);
 
-	@PutMapping(value = "/journals/{id}")
+	@PutMapping(value = "/journauxs/{id}")
 	public void deletedJournal(@PathVariable long id);
 
 }
