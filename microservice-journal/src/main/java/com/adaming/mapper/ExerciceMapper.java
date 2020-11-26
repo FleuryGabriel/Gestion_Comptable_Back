@@ -2,7 +2,6 @@ package com.adaming.mapper;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
-import org.modelmapper.spi.MatchingStrategy;
 import org.springframework.stereotype.Component;
 
 import com.adaming.dto.ExerciceDTO;
