@@ -28,25 +28,25 @@ public class Ligne_EcritureController {
 	@Autowired
 	ILigne_EcritureMapper ligne_ecritureMapper;
 	
-	@GetMapping(value="/ligne_ecritures")
+	@GetMapping(value="/ligneEcritures")
 	public List<Ligne_EcritureDTO> findAll() {
 		return (List<Ligne_EcritureDTO>) ligne_ecritureService.findAll().stream().map(e -> ligne_ecritureMapper.convertToLigne_EcritureDTO(e))
 				.collect(Collectors.toList());
 	}
-	@GetMapping(value="/ligne_ecritures/{idLigne_Ecriture}")
+	@GetMapping(value="/ligneEcritures/{idLigne_Ecriture}")
 	public Ligne_EcritureDTO findOne(@PathVariable("idLigne_Ecriture") Long idLigne_Ecriture) {
 		return ligne_ecritureMapper.convertToLigne_EcritureDTO(ligne_ecritureService.findOne(idLigne_Ecriture));
 	}
-	@PostMapping(value="/ligne_ecritures")
+	@PostMapping(value="/ligneEcritures")
 	public Ligne_EcritureDTO saveLigne_Ecriture(@RequestBody Ligne_Ecriture ligne_Ecriture) {
 		return ligne_ecritureMapper.convertToLigne_EcritureDTO(ligne_ecritureService.save(ligne_Ecriture));
 	}
-	@DeleteMapping(value="/ligne_ecritures/{idLigne_Ecriture}")
+	@DeleteMapping(value="/ligneEcritures/{idLigne_Ecriture}")
 	public void deleteLigne_Ecriture(@PathVariable("idLigne_Ecriture") Long idLigne_Ecriture) {
 		ligne_ecritureService.delete(idLigne_Ecriture);
 	}
 	
-	@PutMapping(value="/ligne_ecritures/{idLigne_Ecriture}")
+	@PutMapping(value="/ligneEcritures/{idLigne_Ecriture}")
 	public Ligne_EcritureDTO deletedLigne_Ecriture(@PathVariable("idLigne_Ecriture") Long idLigne_Ecriture) {
 		
 		Ligne_Ecriture currentLigne_Ecriture = ligne_ecritureService.findOne(idLigne_Ecriture);

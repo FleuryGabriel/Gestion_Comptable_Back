@@ -65,19 +65,19 @@ public interface MicroServiceUtilisateurProxies {
 	public List<UtilisateurBean> findUtilisateurNotDeleted();
 
 	// Employe
-	@PostMapping(value = "/employees")
+	@PostMapping(value = "/employes")
 	public void addemployee(@RequestBody EmployeBean e);
 
-	@GetMapping(value = "/employees")
+	@GetMapping(value = "/employes")
 	public List<EmployeBean> getAllEmploye();
 
-	@GetMapping(value = "/employees/{id}")
+	@GetMapping(value = "/employes/{id}")
 	public EmployeBean findByIdEmploye(@PathVariable long id);
 
-	@DeleteMapping(value = "/employees/{id}")
+	@DeleteMapping(value = "/employes/{id}")
 	public void deleteEmploye(@PathVariable long id);
 
-	@PutMapping(value = "/employees/{id}")
+	@PutMapping(value = "/employes/{id}")
 	public void deletedEmploye(@PathVariable long id);
 	
 	@GetMapping(value="/employesNotDeleted")
