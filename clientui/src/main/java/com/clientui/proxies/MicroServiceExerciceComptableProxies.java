@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
 import com.clientui.beans.ExerciceBean;
 import com.clientui.beans.JournalBean;
 import com.clientui.beans.LigneEcritureBean;;
@@ -32,6 +33,9 @@ public interface MicroServiceExerciceComptableProxies {
 
 	@PutMapping(value = "/exercices/{id}")
 	public void deletedExercice(@PathVariable long id);
+	
+	@GetMapping(value = "/exercicesNotDeleted")
+	public List<ExerciceBean> findExerciceNotDeleted();
 
 	// LigneEcriture
 	@PostMapping(value = "/ligneEcritures")
@@ -64,5 +68,8 @@ public interface MicroServiceExerciceComptableProxies {
 
 	@PutMapping(value = "/journauxs/{id}")
 	public void deletedJournal(@PathVariable long id);
+	
+	@GetMapping(value = "/journauxNotDeleted")
+	public List<JournalBean> findJournauxNotDeleted();
 
 }

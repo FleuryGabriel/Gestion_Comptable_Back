@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import com.clientui.beans.AgenceBean;
 import com.clientui.beans.EmployeBean;
 import com.clientui.beans.RoleBean;
@@ -56,6 +57,12 @@ public interface MicroServiceUtilisateurProxies {
 	
 	@GetMapping(value="/utilisateursAuthentification")
 	public UtilisateurBean authentification(@RequestParam("login") String login,@RequestParam String password);
+	
+	@GetMapping(value="/utilisateursWithLogin")
+	public List<UtilisateurBean> findUtilisateurWithLogin(@RequestParam(name="login") String login);
+	
+	@GetMapping(value="/utilisateursNotDeleted")
+	public List<UtilisateurBean> findUtilisateurNotDeleted();
 
 	// Employe
 	@PostMapping(value = "/employees")
@@ -72,6 +79,9 @@ public interface MicroServiceUtilisateurProxies {
 
 	@PutMapping(value = "/employees/{id}")
 	public void deletedEmploye(@PathVariable long id);
+	
+	@GetMapping(value="/employesNotDeleted")
+	public List<EmployeBean> findEmployeNotDeleted();
 
 	// Agence
 	@PostMapping(value = "/agences")
@@ -88,4 +98,7 @@ public interface MicroServiceUtilisateurProxies {
 
 	@PutMapping(value = "/agences/{id}")
 	public void deletedAgence(@PathVariable long id);
+	
+	@GetMapping(value = "/agencesNotDeleted")
+	public List<AgenceBean> findAgenceNotDeleted();
 }

@@ -100,6 +100,16 @@ public class ClientController {
 	public UtilisateurBean authentification(@RequestParam("login") String login, @RequestParam String password) {
 		return msup.authentification(login, password);
 	}
+	
+	@GetMapping(value="/utilisateursWithLogin")
+	public List<UtilisateurBean> findUtilisateurWithLogin(@RequestParam(name="login") String login){
+		return msup.findUtilisateurWithLogin(login);
+	}
+	
+	@GetMapping(value="/utilisateursNotDeleted")
+	public List<UtilisateurBean> findNotDeleted(){
+		return msup.findUtilisateurNotDeleted();
+	}
 
 	// Agence
 	@PostMapping(value = "/agences")
@@ -126,6 +136,11 @@ public class ClientController {
 	public void deletedAgence(@PathVariable long id) {
 		msup.deletedAgence(id);
 	}
+	
+	@GetMapping(value = "/agencesNotDeleted")
+	public List<AgenceBean> findAgenceNotDeleted(){
+		return msup.findAgenceNotDeleted();
+	}
 
 	// Employe
 	@PostMapping(value = "/employes")
@@ -146,6 +161,11 @@ public class ClientController {
 	@DeleteMapping(value = "/employes/{id}")
 	public void deleteEmploye(@PathVariable long id) {
 		msup.deleteEmploye(id);
+	}
+	
+	@GetMapping(value="/employesNotDeleted")
+	public List<EmployeBean> findEmployeNotDeleted(){
+		return msup.findEmployeNotDeleted();
 	}
 
 	// Exercice
@@ -173,6 +193,11 @@ public class ClientController {
 	public void deletedExercice(@PathVariable long id) {
 		msecp.deletedExercice(id);
 	}
+	
+	@GetMapping(value = "/exercicesNotDeleted")
+	public List<ExerciceBean> findExerciceNotDeleted(){
+		return msecp.findExerciceNotDeleted();
+	}
 
 	// Journals
 	@PostMapping(value = "/journaux")
@@ -198,6 +223,11 @@ public class ClientController {
 	@PutMapping(value = "/journaux/{id}")
 	public void deletedJournals(@PathVariable long id) {
 		msecp.deletedJournal(id);
+	}
+	
+	@GetMapping(value = "/journauxNotDeleted")
+	public List<JournalBean> findJournauxNotDeleted(){
+		return msecp.findJournauxNotDeleted();
 	}
 
 	// LigneEcriture
