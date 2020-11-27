@@ -12,13 +12,13 @@ public class EmployeBean {
 	private Long tel;
 	private float salaire;
 	private boolean deleted = false;
-	private AgenceBean agenceBean;
+	private AgenceBean agence;
 	private byte[] photo;
 	
 	public EmployeBean() {
 	}
 	public EmployeBean(String nom, String prenom, Date dateNaissance, Long cin, String email, Long tel, float salaire,
-			boolean deleted, AgenceBean agenceBean) {
+			boolean deleted, AgenceBean agence) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -28,10 +28,10 @@ public class EmployeBean {
 		this.tel = tel;
 		this.salaire = salaire;
 		this.deleted = deleted;
-		this.agenceBean = agenceBean;
+		this.agence = agence;
 	}
 	public EmployeBean(Long id, String nom, String prenom, Date dateNaissance, Long cin, String email, Long tel,
-			float salaire, boolean deleted, AgenceBean agenceBean) {
+			float salaire, boolean deleted, AgenceBean agence) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -42,7 +42,7 @@ public class EmployeBean {
 		this.tel = tel;
 		this.salaire = salaire;
 		this.deleted = deleted;
-		this.agenceBean = agenceBean;
+		this.agence = agence;
 	}
 	public Long getId() {
 		return id;
@@ -98,11 +98,11 @@ public class EmployeBean {
 	public void setDeleted(boolean deleted) {
 		this.deleted = deleted;
 	}
-	public AgenceBean getAgenceBean() {
-		return agenceBean;
+	public AgenceBean getAgence() {
+		return agence;
 	}
-	public void setAgenceBean(AgenceBean agenceBean) {
-		this.agenceBean = agenceBean;
+	public void setAgence(AgenceBean agence) {
+		this.agence = agence;
 	}
 	public byte[] getPhoto() {
 		return photo;
