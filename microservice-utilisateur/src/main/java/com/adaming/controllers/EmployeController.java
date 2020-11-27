@@ -1,5 +1,6 @@
 package com.adaming.controllers;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.adaming.dto.EmployeDTO;
+import com.adaming.entities.Agence;
 import com.adaming.entities.Employe;
 import com.adaming.mappers.EmployeMapper;
 import com.adaming.services.EmployeService;
@@ -41,10 +43,22 @@ public class EmployeController {
 	}
 
 	@PostMapping(value = "employes")
-	public String saveEmploye(@RequestBody Employe eIn, @RequestParam("file") MultipartFile file) {
+	public String saveEmploye(@RequestParam("nom") String nom,@RequestParam("prenom") String prenom, 
+			@RequestParam("dateNaissance") Date dateNaissance,@RequestParam("cin")Long cin,
+			@RequestParam("email" )String email,@RequestParam("tel")Long tel,@RequestParam("salaire")float salaire,
+			@RequestParam("agence")Agence agence,@RequestParam("file") MultipartFile file) {
 		try {
-			eIn.setPhoto(file.getBytes());
-			eServ.saveEmploye(eIn);
+			Employe emp=new Employe();
+			emp.setNom(nom);
+			emp.setPrenom(prenom);
+			emp.setDateNaissance(dateNaissance);
+			emp.setCin(cin);
+			emp.setEmail(email);
+			emp.setTel(tel);
+			emp.setSalaire(salaire);
+			emp.setAgence(agence);			
+			emp.setPhoto(file.getBytes());
+			eServ.saveEmploye(emp);
 			return "File uploaded successfully! filename = " + file.getOriginalFilename();
 		} catch (Exception e) {
 			e.printStackTrace();
