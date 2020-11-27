@@ -42,29 +42,36 @@ public class EmployeController {
 		return eMap.convertToEmployeDTO(eServ.findOne(id));
 	}
 
+//	@PostMapping(value = "employes")
+//	public String saveEmploye(@RequestParam("nom") String nom,@RequestParam("prenom") String prenom, 
+//			@RequestParam("dateNaissance") Date dateNaissance,@RequestParam("cin")Long cin,
+//			@RequestParam("email" )String email,@RequestParam("tel")Long tel,@RequestParam("salaire")float salaire,
+//			@RequestParam("agence")Agence agence,@RequestParam("file") MultipartFile file) {
+//		try {
+//			Employe emp=new Employe();
+//			emp.setNom(nom);
+//			emp.setPrenom(prenom);
+//			emp.setDateNaissance(dateNaissance);
+//			emp.setCin(cin);
+//			emp.setEmail(email);
+//			emp.setTel(tel);
+//			emp.setSalaire(salaire);
+//			emp.setAgence(agence);			
+//			emp.setPhoto(file.getBytes());
+//			eServ.saveEmploye(emp);
+//			return "File uploaded successfully! filename = " + file.getOriginalFilename();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			return "Fail! Max file size = 500kB";
+//		}
+//	}
+	
 	@PostMapping(value = "employes")
-	public String saveEmploye(@RequestParam("nom") String nom,@RequestParam("prenom") String prenom, 
-			@RequestParam("dateNaissance") Date dateNaissance,@RequestParam("cin")Long cin,
-			@RequestParam("email" )String email,@RequestParam("tel")Long tel,@RequestParam("salaire")float salaire,
-			@RequestParam("agence")Agence agence,@RequestParam("file") MultipartFile file) {
-		try {
-			Employe emp=new Employe();
-			emp.setNom(nom);
-			emp.setPrenom(prenom);
-			emp.setDateNaissance(dateNaissance);
-			emp.setCin(cin);
-			emp.setEmail(email);
-			emp.setTel(tel);
-			emp.setSalaire(salaire);
-			emp.setAgence(agence);			
-			emp.setPhoto(file.getBytes());
-			eServ.saveEmploye(emp);
-			return "File uploaded successfully! filename = " + file.getOriginalFilename();
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "Fail! Max file size = 500kB";
-		}
+	public EmployeDTO saveEmploye(@RequestBody Employe eIN) {
+		return eMap.convertToEmployeDTO(eServ.saveEmploye(eIN));
+				
 	}
+	
 
 	@DeleteMapping(value = "employes/{pId}")
 	public void deleteEmploye(@PathVariable("pId") Long id) {
