@@ -79,5 +79,10 @@ public class UtilisateurController {
 		return uServ.findNotDeleted().stream().map(e -> uMap.convertToUtilisateurDTO(e)).collect(Collectors.toList());
 	}
 
+	@DeleteMapping(value = "utilisateursByEmployeId/{eId}")
+	public void deleteByEmploye(@PathVariable("eId") Long id) {
+		uServ.deleteUtilisateurs(id);
+	}
+
 
 }

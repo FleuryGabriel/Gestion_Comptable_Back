@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.adaming.entities.Employe;
 import com.adaming.entities.Utilisateur;
 import com.adaming.repositories.UtilisateurRepository;
 
@@ -56,5 +57,13 @@ public class UtilisateurServiceImpl implements UtilisateurService{
 	public List<Utilisateur> findNotDeleted() {
 		return uRep.findByDeleted(false);
 	}
+
+	@Override
+	public void deleteUtilisateurs(Long idEmploye) {
+		uRep.deleteUtilisateurs(idEmploye);
+		
+		
+	}
+
 
 }

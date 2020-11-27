@@ -15,7 +15,7 @@ public class EmployeServiceImpl implements EmployeService{
 	@Autowired
 	private EmployeRepository eRep;
 	@Autowired
-	//private UtilisateurRepository uRep;
+	private UtilisateurRepository uRep;
 	
 	@Override
 	public List<Employe> findAll() {
@@ -34,7 +34,7 @@ public class EmployeServiceImpl implements EmployeService{
 
 	@Override
 	public void deleteEmploye(Long id) {
-		
+		uRep.deleteUtilisateurs(id);
 		eRep.deleteById(id);
 	}
 
