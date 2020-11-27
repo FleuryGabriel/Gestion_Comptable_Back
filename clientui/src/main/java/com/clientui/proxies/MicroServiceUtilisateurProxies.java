@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.clientui.beans.AgenceBean;
 import com.clientui.beans.EmployeBean;
@@ -66,7 +67,7 @@ public interface MicroServiceUtilisateurProxies {
 
 	// Employe
 	@PostMapping(value = "/employes")
-	public void addemployee(@RequestBody EmployeBean e);
+	public void addemployee(@RequestBody EmployeBean e, @RequestParam MultipartFile file);
 
 	@GetMapping(value = "/employes")
 	public List<EmployeBean> getAllEmploye();

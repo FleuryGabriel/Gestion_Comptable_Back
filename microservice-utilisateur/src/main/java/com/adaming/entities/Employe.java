@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -39,6 +40,9 @@ public class Employe implements Serializable{
 	private Long tel;
 	@Column(name = "SALAIRE_EMPLOYE")
 	private float salaire;
+	@Column(name = "PHOTO_EMPLOYE")
+	@Lob
+	private byte[] photo;
 	
 	private boolean deleted = false;
 	
@@ -122,7 +126,20 @@ public class Employe implements Serializable{
 	}
 	public void setDeleted(boolean deleted) {
 		this.deleted = deleted;
-	} 
+	}
+	public byte[] getPhoto() {
+		return photo;
+	}
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
+	}
+	public Agence getAgence() {
+		return agence;
+	}
+	public void setAgence(Agence agence) {
+		this.agence = agence;
+	}
+	
 	
 	
 

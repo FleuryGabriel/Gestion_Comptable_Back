@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.clientui.beans.AgenceBean;
 import com.clientui.beans.CompteComptableBean;
@@ -144,8 +145,8 @@ public class ClientController {
 
 	// Employe
 	@PostMapping(value = "/employes")
-	public void addEmploye(@RequestBody EmployeBean r) {
-		msup.addemployee(r);
+	public void addemployee(@RequestBody EmployeBean e, @RequestParam MultipartFile file) {
+		msup.addemployee(e, file);
 	}
 
 	@GetMapping(value = "/employes")

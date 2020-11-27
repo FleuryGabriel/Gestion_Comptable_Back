@@ -13,6 +13,7 @@ public class EmployeBean {
 	private float salaire;
 	private boolean deleted = false;
 	private AgenceBean agenceBean;
+	private byte[] photo;
 	
 	public EmployeBean() {
 	}
@@ -102,5 +103,11 @@ public class EmployeBean {
 	}
 	public void setAgenceBean(AgenceBean agenceBean) {
 		this.agenceBean = agenceBean;
+	}
+	public byte[] getPhoto() {
+		return photo;
+	}
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
 	}
 }
